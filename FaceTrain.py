@@ -38,7 +38,7 @@ while True:
     fail = 0
     face = cv2.cvtColor(frame[100:380, 210:430, :], cv2.COLOR_BGR2GRAY)
     z = face.flatten().astype(float)
-    name = str(knn(X, y, z, k=3))
+    name = str(knn(X, y, z, k=15))
     cv2.rectangle(frame, (210,100), (430,380), (0,255,0), 2)
     cv2.putText(frame, name, (210,90), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
     cv2.imshow('frame', frame)
